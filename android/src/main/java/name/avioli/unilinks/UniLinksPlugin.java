@@ -34,17 +34,13 @@ public class UniLinksPlugin
     private void handleIntent(Context context, Intent intent) {
         String action = intent.getAction();
         String dataString = intent.getDataString();
-        Log.i("sichangyong", "handleIntent: "+dataString);
-        Log.i("sichangyong", "handleIntent111: "+1);
-
         if (dataString == null) {
             HashMap<String, String> map = (HashMap<String, String>) intent.getSerializableExtra("map");
-            Log.i("sichangyong", "handleIntent: "+2222);
             Log.i("sichangyong", "handleIntent: "+map);
             if (map!=null){
-                Log.i("sichangyong", "handleIntent111: "+3333);
                 dataString = "holo://holoview-lab.com/?"
                 + "&userName=" + map.get("userName")
+                + "&account=" + map.get("account")
                 + "&nonce=" +  map.get("nonce")
                 + "&timeStamp=" + map.get("timeStamp")
                 + "&signature=" +  map.get("signature")
@@ -58,7 +54,6 @@ public class UniLinksPlugin
                 + "&contactMobile=" +  map.get("contactMobile")
                 + "&workStatus=" +  map.get("workStatus")
                 + "&extra=" + null;
-
             }
         }
         if (Intent.ACTION_VIEW.equals(action)) {
@@ -87,6 +82,7 @@ public class UniLinksPlugin
                     if (map!=null){
                         dataString = "holo://holoview-lab.com/?"
                                 + "&userName=" + map.get("userName")
+                                + "&account=" + map.get("account")
                                 + "&nonce=" +  map.get("nonce")
                                 + "&timeStamp=" + map.get("timeStamp")
                                 + "&signature=" +  map.get("signature")
