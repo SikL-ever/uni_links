@@ -34,6 +34,8 @@ public class UniLinksPlugin
     private void handleIntent(Context context, Intent intent) {
         String action = intent.getAction();
         String dataString = intent.getDataString();
+        String aaa=intent.getExtras().getString("account");
+        Log.i("sichangyongaaa", "handleIntenta: "+aaa);
         if (dataString == null) {
             HashMap<String, String> map = (HashMap<String, String>) intent.getSerializableExtra("map");
             Log.i("sichangyong", "handleIntent: "+map);
@@ -54,6 +56,24 @@ public class UniLinksPlugin
                 + "&contactMobile=" +  map.get("contactMobile")
                 + "&workStatus=" +  map.get("workStatus")
                 + "&extra=" + null;
+            }else{
+                dataString = "holo://holoview-lab.com/?"
+                        + "&userName=" + intent.getExtras().getString("userName")
+                        + "&account=" + intent.getExtras().getString("account")
+                        + "&nonce=" +  intent.getExtras().getString("nonce")
+                        + "&timeStamp=" + intent.getExtras().getString("timeStamp")
+                        + "&signature=" +  intent.getExtras().getString("signature")
+                        + "&workNumber=" +  intent.getExtras().getString("workNumber")
+                        + "&dispatchTime=" +  intent.getExtras().getString("dispatchTime")
+                        + "&workType=" +  intent.getExtras().getString("workType")
+                        + "&faultType=" +  intent.getExtras().getString("faultType")
+                        + "&faultLoc=" +  intent.getExtras().getString("faultLoc")
+                        + "&faultDesc=" +  intent.getExtras().getString("faultDesc")
+                        + "&contactName=" +  intent.getExtras().getString("contactName")
+                        + "&contactMobile=" +  intent.getExtras().getString("contactMobile")
+                        + "&workStatus=" +  intent.getExtras().getString("workStatus")
+                        + "&extra=" + null;
+                Log.i("sichangyongaaa", "handleIntenta: "+dataString);
             }
         }
         if (Intent.ACTION_VIEW.equals(action)) {
@@ -97,6 +117,24 @@ public class UniLinksPlugin
                                 + "&workStatus=" +  map.get("workStatus")
                                 + "&extra=" + null;
 
+                    }else{
+                        dataString = "holo://holoview-lab.com/?"
+                                + "&userName=" + intent.getExtras().getString("userName")
+                                + "&account=" + intent.getExtras().getString("account")
+                                + "&nonce=" +  intent.getExtras().getString("nonce")
+                                + "&timeStamp=" + intent.getExtras().getString("timeStamp")
+                                + "&signature=" +  intent.getExtras().getString("signature")
+                                + "&workNumber=" +  intent.getExtras().getString("workNumber")
+                                + "&dispatchTime=" +  intent.getExtras().getString("dispatchTime")
+                                + "&workType=" +  intent.getExtras().getString("workType")
+                                + "&faultType=" +  intent.getExtras().getString("faultType")
+                                + "&faultLoc=" +  intent.getExtras().getString("faultLoc")
+                                + "&faultDesc=" +  intent.getExtras().getString("faultDesc")
+                                + "&contactName=" +  intent.getExtras().getString("contactName")
+                                + "&contactMobile=" +  intent.getExtras().getString("contactMobile")
+                                + "&workStatus=" +  intent.getExtras().getString("workStatus")
+                                + "&extra=" + null;
+                        Log.i("sichangyongaaa", "handleIntenta: "+dataString);
                     }
                 }
                 if (dataString == null) {
