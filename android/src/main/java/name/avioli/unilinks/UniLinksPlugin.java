@@ -33,6 +33,9 @@ public class UniLinksPlugin
 
     private void handleIntent(Context context, Intent intent) {
         String action = intent.getAction();
+        if(!Intent.ACTION_VIEW.equals(action)){
+            return ;
+        }
         String dataString = intent.getDataString();
 //        Long  a=intent.getExtras().getLong("dispatchTime");
 //        Log.i("sichangyong", "-s: "+a);
